@@ -30,12 +30,12 @@
               <td class = "text-center">{{$product->id}} </td>
               <td>{{$product->name}}</td>
               <td>{{$product->description}}
-              <td> {{$product->category->name}} </td>
+              <td> {{$product->category ? $product->category->name :'General'}} </td>
               <td class = "text-right"> &euro; {{$product->price}} </td>
               <td class = "td-actions">
-                  <button type = "button" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
+                  <a href="{{url('/admin/products/'.$product->id.'/edit')}}" type = "button" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
                       <i class = "fa fa-info"> </i>
-                  </button>
+                  </a>
                   <button type = "button" rel = "tooltip" title = "Editar Producto" class = "btn btn-success btn-simple btn-sm">
                       <i class = "fa fa-edit"> </i>
                   </button>

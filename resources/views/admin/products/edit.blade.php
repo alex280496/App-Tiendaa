@@ -10,20 +10,20 @@
   <div class="container">
 
     <div class="section">
-      <h2 class="title text-center">Nuevo Producto</h2>
-      <form class="" action="{{url('/admin/products')}}" method="post"> <!-- la url es la ruta post para el metodo store-->
+      <h2 class="title text-center">Editar informacion del Producto</h2>
+      <form class="" action="{{url('/admin/products/'.$product->id.'/edit')}}" method="post"> <!-- la url es la ruta post para el metodo update-->
         {{csrf_field()}}
         <div class="row">
           <div class="col-sm-6">
             	<div class="form-group label-floating">
             		<label class="control-label">Nombre del producto</label>
-            		<input type="text" class="form-control" name="name">
+            		<input type="text" class="form-control" name="name" value="{{$product->name}}">
             	</div>
         </div>
           <div class="col-sm-6">
           	<div class="form-group label-floating">
           		<label class="control-label">Precio</label>
-          		<input type="number" class="form-control" name="price">
+          		<input type="number" class="form-control" name="price" value="{{$product->price}}">
           	</div>
         </div>
         </div>
@@ -31,21 +31,22 @@
           <div class="col-md-12">
           	<div class="form-group label-floating">
           		<label class="control-label">Descripcion</label>
-          		<input type="text" class="form-control" name="description">
+          		<input type="text" class="form-control" name="description" value="{{$product->description}}">
           	</div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col-md-12">
-          <textarea class="form-control" placeholder="Descripcion larga" rows="5" name="long_description"></textarea>
+          <textarea class="form-control" placeholder="Descripcion larga" rows="5" name="long_description">
+          {{$product->long_description}}</textarea>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-3">
-          <button class="btn btn-primary mb-9">Guardar Producto</button>
-        </div>
-        </div>
+        
+
+          <button class="btn btn-primary">Guardar Producto</button>
+          <a href="{{url('/admin/products')}}" class="btn btn-default">Cancelar</a>
+
       </form>
 
   </div>
