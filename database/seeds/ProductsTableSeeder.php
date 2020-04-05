@@ -13,8 +13,21 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Product::class,100)->create(); //llamo a mi fatory de prodcutos, le digo que creee cien productos
-        factory(Category::class,5)->create();
-        factory(ProductImage::class,200)->create();
-    }
+      /*factory(Category::class,5)->create();
+     factory(Product::class,10)->create();
+     factory(ProductImage::class,20)->create();*/
+
+     // para poblar todas las tablas relacioanda sde la base de datos
+
+        $categories=factory(Category::class,5)->create();
+        $categories->each(function($category){
+        $products=factory(Product::class, 20)->make();
+        $category->products()->saveMany($products);
+        $products->each(function($p){
+             $images=factory(ProductImage::class, 5)->make();
+             $p->images()->saveMany($images);
+         });
+     });
+ }
+
 }
