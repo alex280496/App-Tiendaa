@@ -33,15 +33,15 @@
               <td> {{$product->category ? $product->category->name :'General'}} </td>
               <td class = "text-right"> &euro; {{$product->price}} </td>
               <td class = "td-actions">
-                  <a href="{{url('/admin/products/'.$product->id.'/edit')}}" type = "button" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
+                  <a  href="#" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
                       <i class = "fa fa-info"> </i>
                   </a>
-                  <button type = "button" rel = "tooltip" title = "Editar Producto" class = "btn btn-success btn-simple btn-sm">
+                  <a href="{{url('/admin/products/'.$product->id.'/edit')}}" rel = "tooltip" title = "Editar Producto" class = "btn btn-success btn-simple btn-sm">
                       <i class = "fa fa-edit"> </i>
-                  </button>
-                  <button type = "button" rel = "tooltip" title = "Eliminar" class = "btn btn-danger btn-simple btn-sm">
+                  </a>
+                  <a href="{{url('/admin/products/'.$product->id.'/delete')}}" rel = "tooltip" title = "Eliminar" class = "btn btn-danger btn-simple btn-sm">
                       <i class = "fa fa-times"> </i>
-                  </button>
+                  </a>
               </td>
           </tr>
           @endforeach

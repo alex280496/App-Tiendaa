@@ -23,7 +23,7 @@
           <div class="col-sm-6">
           	<div class="form-group label-floating">
           		<label class="control-label">Precio</label>
-          		<input type="number" class="form-control" name="price" value="{{$product->price}}">
+          		<input type="number" step="0.01" class="form-control" name="price" value="{{$product->price}}">
           	</div>
         </div>
         </div>
@@ -41,10 +41,7 @@
           {{$product->long_description}}</textarea>
           </div>
         </div>
-
-        
-
-          <button class="btn btn-primary">Guardar Producto</button>
+          <button class="btn btn-primary">Guardar Cambios</button>
           <a href="{{url('/admin/products')}}" class="btn btn-default">Cancelar</a>
 
       </form>

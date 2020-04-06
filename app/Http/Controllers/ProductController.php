@@ -30,5 +30,21 @@ class ProductController extends Controller
       $product=Product::find($id);
       return view('admin.products.edit')->with(compact('product'));
     }
+    public function update(Request $request, $id){
+      $product=Product::find($id);
+      $product->name=$request->input('name');
+      $product->description=$request->input('description');
+      $product->price=$request->input('price');
+      $product->long_description=$request->input('long_description');
+
+      $product->save(); //update en la base de datos
+      return redirect('/admin/products');
+    }
+
+    public function  delete($id){
+      $product=Product::find($id);
+      $product->delete();
+      return back();
+    }
 
 }

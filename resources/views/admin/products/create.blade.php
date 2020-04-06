@@ -23,7 +23,7 @@
           <div class="col-sm-6">
           	<div class="form-group label-floating">
           		<label class="control-label">Precio</label>
-          		<input type="number" class="form-control" name="price">
+          		<input type="number" step="0.01" class="form-control" name="price">  <!-- step="0.01"para decirle qeu admite # con dos decimales-->
           	</div>
         </div>
         </div>
