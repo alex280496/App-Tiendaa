@@ -30,4 +30,6 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
   Route::get('/products/{id}/images','ImageController@index');//listado de imagenes
   Route::post('/products/{id}/images','ImageController@store');//agregar nuevas Imagenes
   Route::delete('/products/{id}/images','ImageController@destroy');//eliminar
+
+  Route::get('products/{id}/images/select/{image}','ImageController@select'); //par destacar una imagen
 });

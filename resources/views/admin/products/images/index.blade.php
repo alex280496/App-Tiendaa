@@ -33,6 +33,18 @@
                  {{ method_field('DELETE')}}
                  <input type="hidden" name="image_id" value="{{$image->id}}">
                  <button type="submit" name="button" class="btn btn-warning btn-round">Eliminar Imagen</button>
+                 @if($image->featured)
+                   <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round" rel="tooltip" title="Imagen descatada del producto" >
+                     <!--mandamos el ide del producto y el id de la iamegn  para saber eque la imagen esta asocida bcon este producto-->
+                        <i class="material-icons">favorite</i>
+                    </button>
+                 @else
+                   <a href="{{url('/admin/products/'.$product->id.'/images/select/'.$image->id)}}" class="btn btn-danger btn-fab btn-fab-mini btn-round">
+                     <!--mandamos el ide del producto y el id de la iamegn  para saber eque la imagen esta asocida bcon este producto-->
+                        <i class="material-icons">favorite</i>
+                    </a>
+                 @endif
+
                </form>
 
             </div>
