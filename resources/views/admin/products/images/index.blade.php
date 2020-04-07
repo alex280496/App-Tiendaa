@@ -28,7 +28,13 @@
           <div class="card">
             <div class="card-body">
               <img src="{{$image->url}}" alt="Imagen del producto">
-              <button type="submit" name="button" class="btn btn-warning btn-round">Eliminar Imagen</button>
+               <form class="" action="{{url('/admin/products/'.$product->id.'/images')}}" method="post">
+                 {{csrf_field()}}
+                 {{ method_field('DELETE')}}
+                 <input type="hidden" name="image_id" value="{{$image->id}}">
+                 <button type="submit" name="button" class="btn btn-warning btn-round">Eliminar Imagen</button>
+               </form>
+
             </div>
           </div>
         </div>

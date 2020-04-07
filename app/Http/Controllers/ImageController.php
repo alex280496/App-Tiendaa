@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\ProductImage;
+use File;
 class ImageController extends Controller
 {
     public function index($id){
@@ -18,19 +19,35 @@ class ImageController extends Controller
       $file=$request->file('photo'); //obtiene el archivo que se sube y se guarda con el nombre de file
       $path=public_path().'/images/products'; //es la ruta donde se va gurdar la imagen le concatenamos al directorio public_path() una carpeta para las imagnes
       $fileName=uniqid().$file->getClientOriginalName();//crea un nombre unico para al imagen concotentando con el nombre la imagen
-      $file->move($path,$fileName);//mover el archivo en ese path(ruta) con el filename (nombre de archivo)
-
+      $moved=$file->move($path,$fileName);//mover el archivo en ese path(ruta) con el filename (nombre de archivo)
+     //la varible moved me devulve true o false si es verdad se hae el registro en la base de datood
 
       //crear un registro en la tabla product_images
-      $productImage=new ProductImage();
-      $productImage->image=$fileName;
-      $productImage->featured=false;
-      $productImage->product_id=$id;
+      if($moved){
+        $productImage=new ProductImage();
+        $productImage->image=$fileName;
+        $productImage->featured=false;
+        $productImage->product_id=$id;
 
-      $productImage->save();//insert en la bd
-      return back();
+        $productImage->save();//insert en la bd
+      }
+        return back();
+
     }
-    public function destroy(){
+    public function destroy(Request $request,$id){
 
+      //eliminar el archivo
+      $productImage=ProductImage::find($request->input('image_id'));
+      if(substr($productImage->image,0,4)=="http"){
+        $deleted=true;
+      }else{
+        $fullpath=public_path().'/images/products/'.$productImage->image;
+        $deleted=File::delete($fullpath);// deleted devuleve true si elimina el archivo fisico
+      }
+      //eliminar el registro de la imagen en la base de datos
+      if($deleted){
+        $productImage->delete();
+      }
+      return back();
     }
 }
