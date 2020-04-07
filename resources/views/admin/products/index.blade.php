@@ -16,18 +16,17 @@
           <table class = "table mt-2">
             <thead>
               <tr>
-              <th class = "text-center"> # </th>
-              <th> Nombre </th>
-              <th>Descripcion </th>
-              <th>Categoria </th>
-              <th class = "text-right"> Precio </th>
-              <th> Opciones </th>
+              <th class="col-xs-2"> Nombre </th>
+              <th class="col-xs-2">Descripcion </th>
+              <th class="col-xs-2" >Categoria </th>
+              <th class = "text-right col-xs-2"> Precio </th>
+              <th class="col-xs-2"> Opciones </th>
             </tr>
           </thead>
           <tbody>
          @foreach ($products as $product)
           <tr>
-              <td class = "text-center">{{$product->id}} </td>
+
               <td>{{$product->name}}</td>
               <td>{{$product->description}}
               <td> {{$product->category ? $product->category->name :'General'}} </td>
@@ -38,6 +37,9 @@
                   </a>
                   <a href="{{url('/admin/products/'.$product->id.'/edit')}}" rel = "tooltip" title = "Editar Producto" class = "btn btn-success btn-simple btn-sm">
                       <i class = "fa fa-edit"> </i>
+                  </a>
+                  <a  href="{{url('/admin/products/'.$product->id.'/images')}}" rel = "tooltip" title = "Imagenes" class = "btn btn-warning btn-simple btn-sm">
+                      <i class = "fa fa-image"> </i>
                   </a>
                   <a href="{{url('/admin/products/'.$product->id.'/delete')}}" rel = "tooltip" title = "Eliminar" class = "btn btn-danger btn-simple btn-sm">
                       <i class = "fa fa-times"> </i>
