@@ -18,8 +18,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/','TestController@index');
+Route::get('/products/{id}','ProductController@show');
 
-Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () {
   Route::get('/products','ProductController@index'); //para listar todos los productos
   Route::get('/products/create','ProductController@create'); //para mostrar el fomulario del nuevo produuto
   Route::post('/products','ProductController@store'); //para guardar los datos del formulario en la base de datos

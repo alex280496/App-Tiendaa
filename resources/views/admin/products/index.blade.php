@@ -32,7 +32,7 @@
               <td> {{$product->category ? $product->category->name :'General'}} </td>
               <td class = "text-right"> &euro; {{$product->price}} </td>
               <td class = "td-actions">
-                  <a  href="#" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
+                  <a  href="{{url('/products/'.$product->id)}}" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
                       <i class = "fa fa-info"> </i>
                   </a>
                   <a href="{{url('/admin/products/'.$product->id.'/edit')}}" rel = "tooltip" title = "Editar Producto" class = "btn btn-success btn-simple btn-sm">
