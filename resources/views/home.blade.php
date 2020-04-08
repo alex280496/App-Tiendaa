@@ -24,7 +24,7 @@
     <li class="nav-item active">
         <a class="nav-link active" href="#dashboard-1" role="tab" data-toggle="tab">
             <i class="material-icons">dashboard</i>
-            CARRITO DE COMPRAS
+            VER CARRITO DE COMPRAS
         </a>
     </li>
 
