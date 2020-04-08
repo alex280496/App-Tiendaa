@@ -11,10 +11,16 @@
             <div class="avatar">
               <img src="{{$product->featured_image_url}}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
             </div>
+
             <div class="name">
               <h3>{{$product->name}}</h3>
               <h6>{{$product->category->name}}</h6>
             </div>
+            @if (session('notification'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('notification') }}
+                </div>
+            @endif
           </div>
         </div>
       </div>
