@@ -51,6 +51,7 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a href="{{url('/home')}}" class="dropdown-item">Dashboard</a>
                     @if(auth()->user()->admin)
                       <a class="dropdown-item" href="{{url('/admin/products')}}">Gestionar Productos</a>
                     @endif

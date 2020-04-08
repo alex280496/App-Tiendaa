@@ -21,8 +21,8 @@
     <!--
         color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
     -->
-    <li class="nav-item">
-        <a class="nav-link" href="#dashboard-1" role="tab" data-toggle="tab">
+    <li class="nav-item active">
+        <a class="nav-link active" href="#dashboard-1" role="tab" data-toggle="tab">
             <i class="material-icons">dashboard</i>
             CARRITO DE COMPRAS
         </a>
@@ -35,6 +35,16 @@
         </a>
     </li>
 </ul>
+
+ <!-- cart es un campo calculado que estamso definiendo en el modelo usuario
+    con este nombre getCartAttribute, entonces me permite obtener el carro y con este
+  los datos del detalle con el nombre details que es la realcion definida
+  en el modelo cart para la relacion -->
+   @foreach (auth()->user()->cart->details as $detail)
+  <ul>
+    <li>{{$detail}}</li>
+  </ul>
+  @endforeach
 
   </div>
 </div>
