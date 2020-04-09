@@ -22,7 +22,7 @@ Route::get('/products/{id}','ProductController@show'); //mostrar los datos del p
 Route::post('/cart','CartDetailController@store'); //guarda el detalle de un carrito de compras
 Route::delete('/cart','CartDetailController@destroy');//permite eliminar el detalle de un carrito de compras
 
-Route::post('/order','CartController@update');//ruta para hacer un pedido 
+Route::post('/order','CartController@update');//ruta para hacer un pedido
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () {
   Route::get('/products','ProductController@index'); //para listar todos los productos
@@ -35,6 +35,13 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(
   Route::get('/products/{id}/images','ImageController@index');//listado de imagenes
   Route::post('/products/{id}/images','ImageController@store');//agregar nuevas Imagenes
   Route::delete('/products/{id}/images','ImageController@destroy');//eliminar
-
   Route::get('products/{id}/images/select/{image}','ImageController@select'); //par destacar una imagen
+
+  Route::get('/categories','CategoryController@index'); //para listar todos las actegorias
+  Route::get('/categories/create','CategoryController@create'); //para mostrar el fomulario de una nueva categoria
+  Route::post('/categories','CategoryController@store'); //para guardar los datos del formulario en la base de datos
+  Route::get('/categories/{id}/edit','CategoryController@edit');//muesta el formulario para al edicion
+  Route::post('/categories/{id}/edit','CategoryController@update');//para ediatr y actualizar en la bd
+  Route::get('/categories/{id}/delete','CategoryController@delete');
+
 });
