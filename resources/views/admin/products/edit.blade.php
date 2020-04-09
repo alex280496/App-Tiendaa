@@ -27,14 +27,27 @@
           	</div>
         </div>
         </div>
+
         <div class="row">
-          <div class="col-md-12">
-          	<div class="form-group label-floating">
-          		<label class="control-label">Descripcion</label>
-          		<input type="text" class="form-control" name="description" value="{{$product->description}}">
-          	</div>
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label">Descripcion</label>
+              <input type="text" class="form-control" name="description" value="{{$product->description}}">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label">Categoria</label>
+              <select class="form-control" name="category_id">
+                <option value="0">General</option>
+                @foreach($categories as $category)
+                <option value="{{$category->id}}" @if($category->id == $product->category_id) selected @endif>{{$category->name}} </option>
+                @endforeach
+              </select>
+            </div>
           </div>
         </div>
+
         <div class="row mb-4">
           <div class="col-md-12">
           <textarea class="form-control" placeholder="Descripcion larga" rows="5" name="long_description">
