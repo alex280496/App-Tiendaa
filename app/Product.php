@@ -34,4 +34,11 @@ class Product extends Model
       //default
       return '/iamges/products/default.jpg';//si no tiene ninguna imagen el prodcuto que me devuelva la imaegn or default alamecda em public/products.images
     }
+
+    public function getCategoryNameAttribute(){
+      if($this->category){
+        return $this->category->name;
+      }
+      return 'General';
+    }
 }

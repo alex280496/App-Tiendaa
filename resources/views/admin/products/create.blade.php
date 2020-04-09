@@ -28,11 +28,22 @@
         </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
           	<div class="form-group label-floating">
           		<label class="control-label">Descripcion</label>
           		<input type="text" class="form-control" name="description">
           	</div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label">Categoria</label>
+              <select class="form-control" name="category_id">
+                <option value="0">General</option>
+                @foreach($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+              </select>
+            </div>
           </div>
         </div>
         <div class="row mb-4">

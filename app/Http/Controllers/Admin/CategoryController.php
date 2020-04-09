@@ -9,7 +9,7 @@ use App\Category;
 class CategoryController extends Controller
 {
   public function index(){
-    $categories=Category::paginate(10);
+    $categories=Category::OrderBy('name')->paginate(10);
     return view('admin.categories.index')->with(compact('categories')); //listado de productos
   }
   public function create(){
@@ -40,8 +40,8 @@ class CategoryController extends Controller
   }
 
   public function  delete($id){
-    $product=Product::find($id);
-    $product->delete();
+    $category=Category::find($id);
+    $category->delete();
     return back();
   }
 }

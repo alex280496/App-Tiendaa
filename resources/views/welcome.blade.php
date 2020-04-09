@@ -79,7 +79,7 @@
                 <h4 class="card-title">
                   <a href="{{url('/products/'.$product->id)}}">{{$product->name}}</a>
                   <br>
-                  <small class="card-description text-muted">{{$product->category->name}}</small>
+                  <small class="card-description text-muted">{{$product->category_name}}</small>
                   <!-- category es la funcion que esta en el modelo product para la relacion uno a muchos -->
                 </h4>
                 <div class="card-body">

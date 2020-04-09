@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 class ProductController extends Controller
 {
     public function index(){
@@ -12,7 +13,8 @@ class ProductController extends Controller
       return view('admin.products.index')->with(compact('products')); //listado de productos
     }
     public function create(){
-      return view('admin.products.create'); //formulario de registro
+      $categories=Category::OrderBy('name')->get();
+      return view('admin.products.create')->with(compact('categories')); //formulario de registro
     }
     public function store(Request $request){
       //dd($request->all());
@@ -20,6 +22,7 @@ class ProductController extends Controller
       $product->name=$request->input('name');
       $product->description=$request->input('description');
       $product->price=$request->input('price');
+      $product->category_id=$request->input('category_id')
       $product->long_description=$request->input('long_description');
 
       $product->save();//insert en la abse de datos

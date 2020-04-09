@@ -29,7 +29,7 @@
 
               <td>{{$product->name}}</td>
               <td>{{$product->description}}
-              <td> {{$product->category ? $product->category->name :'General'}} </td>
+              <td> {{$product->category_name}} </td>
               <td class = "text-right"> &euro; {{$product->price}} </td>
               <td class = "td-actions">
                   <a  href="{{url('/products/'.$product->id)}}" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
