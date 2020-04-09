@@ -22,6 +22,7 @@ Route::get('/products/{id}','ProductController@show'); //mostrar los datos del p
 Route::post('/cart','CartDetailController@store'); //guarda el detalle de un carrito de compras
 Route::delete('/cart','CartDetailController@destroy');//permite eliminar el detalle de un carrito de compras
 
+Route::post('/order','CartController@update');//ruta para hacer un pedido 
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () {
   Route::get('/products','ProductController@index'); //para listar todos los productos
