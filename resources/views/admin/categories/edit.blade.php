@@ -10,7 +10,7 @@
   <div class="container">
 
     <div class="section">
-      <h2 class="title text-center">Editar informacion de la Categoria</h2>
+      <h2 class="title text-center">Cambiar  informacion de la Categoria</h2>
       <form class="" action="{{url('/admin/categories/'.$category->id.'/edit')}}" method="post"> <!-- la url es la ruta post para el metodo update-->
         {{csrf_field()}}
         <div class="row">
