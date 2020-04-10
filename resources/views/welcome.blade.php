@@ -4,6 +4,10 @@
 <style>
   .team.row.col-md-4{
     margin-bottom: 3em;
+
+  }
+  .clearfix{
+    clear:both;
   }
 </style>
 @endsection
@@ -66,34 +70,39 @@
       </div>
     </div>
     <div class="section text-center">
-      <h2 class="title">Productos Disponibles</h2>
+      <h2 class="title">Categorias Disponibles</h2>
+
+      <form class="form-inline float-right" action="{{url('/search')}}.html" method="get">
+        <input type="text" placeholder="Que producto buscas?" class="form-control" name="query">
+        <button class="btn btn-primary btn-just-icon" type="submit">
+        	<i class="material-icons">search</i>
+        </button>
+      </form>
+      <div class="clearfix">
+
+      </div>
       <div class="team">
         <div class="row">
-          @foreach($products as $product)
+          @foreach($categories as $category)
           <div class="col-md-4">
             <div class="team-player">
               <div class="card card-plain">
                 <div class="col-md-6 ml-auto mr-auto">
-                  <img src="{{$product->featured_image_url}}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                  <img src="{{$category->featured_image_url}}" alt="Imagen representativa de la categoria {{$category->name}}" class="img-raised rounded-circle img-fluid">
                 </div>
                 <h4 class="card-title">
-                  <a href="{{url('/products/'.$product->id)}}">{{$product->name}}</a>
+                  <a href="{{url('/categories/'.$category->id)}}">{{$category->name}}</a>
                   <br>
-                  <small class="card-description text-muted">{{$product->category_name}}</small>
-                  <!-- category es la funcion que esta en el modelo product para la relacion uno a muchos -->
                 </h4>
                 <div class="card-body">
-                  <p>{{$product->description}}</p>
+                  <p>{{$category->description}}</p>
                 </div>
-
               </div>
             </div>
           </div>
           @endforeach
         </div>
-        <div class="pl-50">
-          {{$products->links()}}
-        </div>
+
       </div>
     </div>
     <div class="section section-contacts">
