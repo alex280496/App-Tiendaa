@@ -17,11 +17,11 @@
         <div class="col-md-6 ml-auto mr-auto">
           <div class="profile">
             <div class="avatar">
-              <img src="{{$category->featured_image_url}}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+              <img src="{{asset('img/search.png')}}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
             </div>
 
             <div class="name">
-              <h3>{{$category->name}}</h3>
+              <h3 class="title">Resultados de la busqueda</h3>
             </div>
             @if (session('notification'))
                 <div class="alert alert-success" role="alert">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="description text-center">
-        <p>{{$category->description}}</p>
+        <p>Se encontrarn {{$products->count()}} resultados para el termino {{$query}}</p>
       </div>
 
 
@@ -68,31 +68,5 @@
   </div>
 </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="modalAddToCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Seleccione la cantidad de productos que desee agregar</h5>
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <form class="" action="{{url('/cart')}}" method="post">
-                {{csrf_field()}}
-                <input type="hidden" name="product_id" value="{{$product->id}}">
-                <div class="modal-body">
-                  <input type="number" name="quantity" value="1" class="form-control">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="submit" class="btn btn-primary">Añadir al carrito</button>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
 
 @endsection

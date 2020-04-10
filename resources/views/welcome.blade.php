@@ -72,7 +72,7 @@
     <div class="section text-center">
       <h2 class="title">Categorias Disponibles</h2>
 
-      <form class="form-inline float-right" action="{{url('/search')}}.html" method="get">
+      <form class="form-inline float-right" action="{{url('/search')}}" method="get">
         <input type="text" placeholder="Que producto buscas?" class="form-control" name="query">
         <button class="btn btn-primary btn-just-icon" type="submit">
         	<i class="material-icons">search</i>

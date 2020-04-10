@@ -27,6 +27,7 @@ Route::delete('/cart','CartDetailController@destroy');//permite eliminar el deta
 Route::post('/order','CartController@update');//ruta para hacer un pedido
 
 Route::get('/search','SearchController@show');
+
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () {
   Route::get('/products','ProductController@index'); //para listar todos los productos
   Route::get('/products/create','ProductController@create'); //para mostrar el fomulario del nuevo produuto
