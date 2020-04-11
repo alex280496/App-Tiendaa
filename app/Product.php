@@ -32,7 +32,7 @@ class Product extends Model
                                       //de la funcion getUrlAttribute()
       }
       //default
-      return '/iamges/products/default.jpg';//si no tiene ninguna imagen el prodcuto que me devuelva la imaegn or default alamecda em public/products.images
+      return '/images/products/default.jpg';//si no tiene ninguna imagen el prodcuto que me devuelva la imaegn or default alamecda em public/products.images
     }
 
     public function getCategoryNameAttribute(){

@@ -17,7 +17,7 @@
         <div class="col-md-6 ml-auto mr-auto">
           <div class="profile">
             <div class="avatar">
-              <img src="{{asset('img/search.png')}}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+              <img src="{{asset('img/search.png')}}" alt="Circle Image"  class="img-raised rounded-circle img-fluid">
             </div>
 
             <div class="name">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="description text-center">
-        <p>Se encontrarn {{$products->count()}} resultados para el termino {{$query}}</p>
+        <p>Se encontraron {{$products->count()}} resultados para el termino {{$query}}</p>
       </div>
 
 
