@@ -1,6 +1,13 @@
 
 @extends('layouts.app')
 @section('body-class','profile-page sidebar-collapse')
+@section('styles')
+<style >
+  .clearfix{
+    clear: both;
+  }
+</style>
+@endsection
 @section('content')
 
 <div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/profile_city.jpg')}}')">
@@ -20,17 +27,21 @@
             		<input type="text" class="form-control" name="name" value="{{$category->name}}">
             	</div>
         </div>
-        <div class="col-sm-6">
-            <label class="control-label">Imagen de la Categoria</label>
-            <input type="file" class="form-control" name="image">
-      </div>
+
         </div>
 
         <div class="row mb-4">
           <div class="col-md-12">
-          <textarea class="form-control" placeholder="Descripcion" rows="5" name="description">
-          {{$category->description}}</textarea>
+          <textarea class="form-control" placeholder="Descripcion" rows="3" name="description">{{$category->description}}</textarea>
           </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-sm-6">
+              <img src="{{asset('/images/categories/'.$category->image)}}" alt="" height="150">
+              <div class="clearfix"></div>
+              <label class="control-label">Imagen de la Categoria</label>
+              <input type="file" class="form-control" name="image">
+            </div>
         </div>
           <button class="btn btn-primary">Guardar Cambios</button>
           <a href="{{url('/admin/categories')}}" class="btn btn-default">Cancelar</a>

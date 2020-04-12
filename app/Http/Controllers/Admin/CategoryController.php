@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
-
+use File;
 class CategoryController extends Controller
 {
   public function index(){
@@ -54,8 +54,11 @@ class CategoryController extends Controller
 
       //entonces acualizamos para guardar la imagen de la categoria
       if($moved){
+        $previosPath=$path.'/'.$category->image;
         $category->image=$fileName;
-        $category->save();//insert en la bd
+        $saved=$category->save();//insert en la bd
+        if($saved)//una vez actualizado, tenemos que elimianr la imagen anterior
+          File::delete($previosPath);
       }
     }
     return redirect('/admin/categories');
@@ -63,7 +66,11 @@ class CategoryController extends Controller
 
   public function  delete($id){
     $category=Category::find($id);
-    $category->delete();
+    $pathdelete=public_path().'/images/categories/'.$category->image;
+    $deleted=$category->delete();
+    if($deleted){
+      File::delete($pathdelete);
+    }
     return back();
   }
 }

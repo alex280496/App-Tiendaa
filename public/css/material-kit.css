@@ -1026,8 +1026,8 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -100px;
-  margin-left: -100px;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 
 .no-gutters {
@@ -13801,6 +13801,7 @@ textarea {
   height: auto !important;
   resize: none;
   line-height: 1.428571 !important;
+
 }
 
 .form-group input[type=file] {

@@ -73,11 +73,11 @@
            {{csrf_field()}}
            {{method_field('DELETE')}}
            <input type="hidden" name="cart_detail_id" value="{{$detail->id}}">
-           <a  href="{{url('/products/'.$detail->product->id)}}"  target="_blank" rel = "tooltip" title = "Ver Producto" class = "btn btn-info btn-simple btn-sm">
+           <a  href="{{url('/products/'.$detail->product->id)}}"  target="_blank" rel="tooltip" title="Ver Producto" class = "btn btn-info btn-simple btn-sm">
                <i class = "fa fa-info"> </i>
            </a>
-           <button type="submit" rel = "tooltip" title = "Eliminar" class = "btn btn-danger btn-simple btn-sm">
-               <i class = "fa fa-times"> </i>
+           <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-sm">
+               <i class="fa fa-times"> </i>
            </button>
          </form>
 
@@ -90,9 +90,11 @@
 <div class="text-center">
   <form class="" action="{{url('/order')}}" method="post">
     {{csrf_field()}}
-    <button class="btn btn-primary btn-round">
-     <i class="material-icons">done</i> Realizar Pedido
-    </button>
+    @if(auth()->user()->cart->details->count()>0)
+      <button class="btn btn-primary btn-round">
+       <i class="material-icons">done</i> Realizar Pedido
+      </button>
+    @endif
   </form>
 
 </div>

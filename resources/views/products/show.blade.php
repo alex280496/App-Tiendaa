@@ -31,6 +31,7 @@
         <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart">
         	<i class="material-icons">add</i>Añadir productos al carrito de compras
         </button>
+        <a href="{{url('/admin/products')}}" class="btn btn-default btn-round">Ver listado de Productos</a>
       </div>
 
       <div class="row">

@@ -51,11 +51,8 @@
           <textarea class="form-control" placeholder="Descripcion larga" rows="5" name="long_description"></textarea>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-3">
           <button class="btn btn-primary mb-9">Guardar Producto</button>
-        </div>
+          <a href="{{asset('admin/products')}}" class="btn btn-default">Cancelar</a>
         </div>
       </form>
 
