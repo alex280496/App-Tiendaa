@@ -11,7 +11,8 @@
 
     <div class="section">
       <h2 class="title text-center">Nueva Categoria</h2>
-      <form class="" action="{{url('/admin/categories')}}" method="post"> <!-- la url es la ruta post para el metodo store-->
+      <form class="" action="{{url('/admin/categories')}}" method="post" enctype="multipart/form-data"> <!-- la url es la ruta post para el metodo store-->
+        <!--  enctype="multipart/form-data" ,para que nos permite las subida de archivos-->
         {{csrf_field()}}
         <div class="row">
           <div class="col-sm-6">
@@ -19,6 +20,10 @@
             		<label class="control-label">Nombre de la Categoria</label>
             		<input type="text" class="form-control" name="name">
             	</div>
+        </div>
+          <div class="col-sm-6">
+              <label class="control-label">Imagen de la Categoria</label>
+              <input type="file" class="form-control" name="image">
         </div>
         </div>
         <div class="row mb-4">

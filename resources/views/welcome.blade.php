@@ -192,7 +192,7 @@
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       // `states` is an array of state names defined in "The Basics"
-      local: ['hola','prueba1','prueba2','prueba3','absdr']
+      prefetch:'{{url("/products/json")}}'
     });
       //inicializar typeahead sobre nuestro input de busqueda
       $('#search').typeahead({

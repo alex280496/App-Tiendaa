@@ -11,7 +11,7 @@
 
     <div class="section">
       <h2 class="title text-center">Cambiar  informacion de la Categoria</h2>
-      <form class="" action="{{url('/admin/categories/'.$category->id.'/edit')}}" method="post"> <!-- la url es la ruta post para el metodo update-->
+      <form class="" action="{{url('/admin/categories/'.$category->id.'/edit')}}" method="post" enctype="multipart/form-data"> <!-- la url es la ruta post para el metodo update-->
         {{csrf_field()}}
         <div class="row">
           <div class="col-sm-6">
@@ -20,6 +20,10 @@
             		<input type="text" class="form-control" name="name" value="{{$category->name}}">
             	</div>
         </div>
+        <div class="col-sm-6">
+            <label class="control-label">Imagen de la Categoria</label>
+            <input type="file" class="form-control" name="image">
+      </div>
         </div>
 
         <div class="row mb-4">

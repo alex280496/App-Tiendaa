@@ -18,6 +18,7 @@
               <tr>
               <th class="col-xs-2"> Nombre </th>
               <th class="col-xs-2">Descripcion </th>
+              <th>Imagen</th>
               <th class="col-xs-2"> Opciones </th>
             </tr>
           </thead>
@@ -26,6 +27,9 @@
           <tr>
               <td>{{$category->name}}</td>
               <td>{{$category->description}}
+              <td>
+                <img src="{{$category->featured_image_url}}" alt="" height="50">
+              </td>
               <td class = "td-actions">
                   <a  href="{{url('/categories/'.$category->id)}}" rel = "tooltip" title = "Ver Categoria" class = "btn btn-info btn-simple btn-sm">
                       <i class = "fa fa-info"> </i>

@@ -18,6 +18,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/','TestController@index');
+
+Route::get('/search','SearchController@show');//para hcer la busqyeda
+Route::get('/products/json','SearchController@data');//ruta para devolver un archivo json con los nombres del producto y poder hacer la busqueda inteligente
+//ponemos estas rutas adelante para que se ejecute primero porque hay otra ruta llamabda asi, se confunde el id con json
+
 Route::get('/products/{id}','ProductController@show'); //mostrar los datos del prodcuto y ls iamges
 Route::get('/categories/{id}','CategoryController@show');//mostra losdatos de la categoria
 
@@ -26,7 +31,6 @@ Route::delete('/cart','CartDetailController@destroy');//permite eliminar el deta
 
 Route::post('/order','CartController@update');//ruta para hacer un pedido
 
-Route::get('/search','SearchController@show');
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () {
   Route::get('/products','ProductController@index'); //para listar todos los productos

@@ -20,11 +20,21 @@ class CategoryController extends Controller
     $category=new Category();
     $category->name=$request->input('name');
     $category->description=$request->input('description');
-
     $category->save();//insert en la abse de datos
+
+    if($request->hasFile('image')){
+      $file=$request->file('image');
+      $path=public_path().'/images/categories';
+      $fileName=uniqid().'-'.$file->getClientOriginalName(); //getClientOriginalName contiene el nombre original incluida la extension
+      $moved=$file->move($path,$fileName);//si se ejecuta correctamente moved tendra el valor de true
+
+      //entonces acualizamos para guardar la imagen de la categoria
+      if($moved){
+        $category->image=$fileName;
+        $category->save();//insert en la bd
+      }
+    }
     return redirect('/admin/categories');//para que una vez guardado el prodcuto muestre el listado de prodcutos
-
-
   }
   public function edit($id){
     $category=Category::find($id);
@@ -36,6 +46,18 @@ class CategoryController extends Controller
     $category->description=$request->input('description');
 
     $category->save(); //update en la base de datos
+    if($request->hasFile('image')){
+      $file=$request->file('image');
+      $path=public_path().'/images/categories';
+      $fileName=uniqid().'-'.$file->getClientOriginalName(); //getClientOriginalName contiene el nombre original incluida la extension
+      $moved=$file->move($path,$fileName);//si se ejecuta correctamente moved tendra el valor de true
+
+      //entonces acualizamos para guardar la imagen de la categoria
+      if($moved){
+        $category->image=$fileName;
+        $category->save();//insert en la bd
+      }
+    }
     return redirect('/admin/categories');
   }
 
