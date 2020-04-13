@@ -22,8 +22,12 @@
                 <i class="fa fa-google-plus"></i>
               </a>
             </div> -->
+
           </div>
           <p class="description text-center">Ingresa tus credenciales</p>
+          <div class="avatar text-center">
+            <img src="{{asset('/img/user.png')}}" alt="" width="100">
+          </div>
           <div class="card-body">
             <div class="input-group">
               <div class="input-group-prepend">
@@ -86,7 +90,7 @@
         </li>
       </ul>
     </nav>
-  
+
   </div>
 </footer>
 @endsection

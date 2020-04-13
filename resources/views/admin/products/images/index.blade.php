@@ -13,7 +13,9 @@
       <div class="card">
         <div class="card-body">
           <form class="" action="{{url('admin/products/'.$product->id.'/images')}}" method="post" enctype="multipart/form-data">
-            <!--enctype="multipart/form-data" para que permita la subida de archivos-->
+            <!--enctype="multipart/form-data" para que permita la subida de archivos sin importar el tipo-->
+            <!--si el action esta vacio significa que la ruta va a ser la misma a la que estamos ubicados actualmente la peticion se hace a una ruta
+          igual a al que esata por defecto -->
             {{csrf_field()}}
             <input type="file" name="photo" value="" class="mr-3" required>
             <button  type="submit" class="btn btn-primary btn-round mx-auto">Subir nueva Imagen</button>
@@ -27,10 +29,10 @@
           <div class="col-md-4">
           <div class="card">
             <div class="card-body">
-              <img src="{{$image->url}}" alt="Imagen del producto">
+              <img src="{{$image->url}}" alt="Imagen del producto" width="300">
                <form class="" action="{{url('/admin/products/'.$product->id.'/images')}}" method="post">
                  {{csrf_field()}}
-                 {{ method_field('DELETE')}}
+                 {{ method_field('DELETE')}} <!--le indicamos qeu se trata de una peticion de tipo delere-->
                  <input type="hidden" name="image_id" value="{{$image->id}}">
                  <button type="submit" name="button" class="btn btn-warning btn-round">Eliminar Imagen</button>
                  @if($image->featured)
