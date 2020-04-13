@@ -44,6 +44,8 @@
   -->
   <hr>
   <p>Tu carrito de compras presenta {{auth()->user()->cart->details->count()}} productos</p>
+  <!--imprimimos la cantidad de detalles que el carrito tiene, esto con el metod count -->
+
   <table class = "table mt-2">
     <thead>
       <tr>
@@ -57,6 +59,9 @@
   </thead>
   <tbody>
   @foreach (auth()->user()->cart->details as $detail)
+  <!--ACCEDEMOS AL USUARIO QUE ESTA AUTENTICADO, A SU CARRITO DE PRODUCTOS  ACTIVO Y PARTIR SUS DETALLES Y RECORREMOS LOS DETALLES -->
+  <!--cart es el campo calcualdo qeu devuelve el carro activo del prodcuot -->
+  <!-- details es la relacion definica en le modelo cart y cart puede tener muchos details-->
   @if($detail)
   <tr>
       <td>

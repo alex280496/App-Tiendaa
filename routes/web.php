@@ -27,7 +27,7 @@ Route::get('/products/{id}','ProductController@show'); //mostrar los datos del p
 Route::get('/categories/{id}','CategoryController@show');//mostra losdatos de la categoria
 
 Route::post('/cart','CartDetailController@store'); //guarda el detalle de un carrito de compras
-Route::delete('/cart','CartDetailController@destroy');//permite eliminar el detalle de un carrito de compras
+Route::delete('/cart','CartDetailController@destroy');//permite eliminar un detalle de un carrito de compras
 
 Route::post('/order','CartController@update');//ruta para hacer un pedido
 
