@@ -12,18 +12,17 @@ use App\Cart;
 class OrderCallReceived extends Mailable
 {
     use Queueable, SerializesModels;
-    public $datoscart;
+    //public $datoscart;
      public $datosuser;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($datosuser,$datoscart)
+    public function __construct($datosuser)
     {
         $this->datosuser = $datosuser;
-        $this->datoscart=$datoscart;
-
+        //$this->datoscart=$datoscart;
     }
 
     /**

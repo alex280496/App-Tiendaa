@@ -17,15 +17,19 @@
     <hr>
     <p>Detalles del pedido relizado:</p>
     <ul>
-      @foreach($datoscart->details as $detail)
+      @foreach (auth()->user()->cart->details as $detail)
       <li>
-        {{$detail->product->name}} x {{$detail->quantity}}
-        (${{$detail->quantity *$detail->product->price}})
+        Producto: {{$detail->product->name}} - Cantidad:  {{$detail->quantity}}
+        (Precio de los productos: {{$detail->quantity *$detail->product->price}})
       </li>
+
      @endforeach
     </ul>
+    <p>
+      <strong>Importe total a pagar: </strong>{{auth()->user()->cart->total}} dolares
+    </p>
 
-  
+
 
 </body>
 </html>

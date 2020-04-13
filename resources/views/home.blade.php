@@ -87,6 +87,7 @@
   @endforeach
 </tbody>
 </table>
+<p> <strong> Valor total a pagar:</strong> {{auth()->user()->cart->total}} dolares</p>
 <div class="text-center">
   <form class="" action="{{url('/order')}}" method="post">
     {{csrf_field()}}
