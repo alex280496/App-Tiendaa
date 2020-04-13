@@ -52,16 +52,17 @@
 
 @section('content')
 
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/profile_city.jpg')}}')">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/welcome.jpg')}}')">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h1 class="title">Bienvido.</h1>
-        <h4>Realiza tus pedidos en Linea y posterioe  se realiza la entrega de tus productos </h4>
+        <h1 class="title">Bienvenido.</h1>
+        <h4>Realiza pedidos de tus productos en Linea, el adminsitrador se comunicara contigo y te hara llegar los productos </h4>
         <br>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
-          <i class="fa fa-play"></i> Ver como funciona la App
-        </a>
+        <div class="avatar">
+          <img src="{{asset('/img/iconowelcome.png')}}" alt="">
+          <img src="{{asset('/img/iconcart.png')}}" alt="" height="100">
+        </div>
       </div>
     </div>
   </div>
@@ -71,37 +72,31 @@
     <div class="section text-center">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-          <h2 class="title">Let&apos;s talk product</h2>
-          <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
+          <h2 class="title">Hablemos del Producto</h2>
+          <h5 class="description">Bienvenido nuevamente a la mejor aplicacion para realizar tus pedidos. A continuacion puedes visualizar todas las categorias disponibles. Todas nuestars categorias disponen de una extensa gama de productos a precios muy accessibles.</h5>
         </div>
       </div>
       <div class="features">
         <div class="row">
           <div class="col-md-4">
             <div class="info">
-              <div class="icon icon-info">
-                <i class="material-icons">chat</i>
-              </div>
-              <h4 class="info-title">Free Chat</h4>
-              <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+             <img src="{{asset('/img/category.svg')}}" alt="" height="100">
+              <h4 class="info-title">Categorias</h4>
+              <p>Accede a todas nuestras categorias con los mejores produtos disponibles  .</p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="info">
-              <div class="icon icon-success">
-                <i class="material-icons">verified_user</i>
-              </div>
-              <h4 class="info-title">Verified Users</h4>
-              <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+              <img src="{{asset('/img/product.svg')}}" alt="" height="100">
+              <h4 class="info-title">Productos</h4>
+              <p>Cada categoria correspondiente dispone de una gran variedad de productos al mejor precio del mercado.</p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="info">
-              <div class="icon icon-danger">
-                <i class="material-icons">fingerprint</i>
-              </div>
-              <h4 class="info-title">Fingerprint</h4>
-              <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+              <img src="{{asset('/img/cart.svg')}}" alt="" height="100">
+              <h4 class="info-title">Carrito de Compras</h4>
+              <p>Una vez seleccionado los productos a tu gusto puedes realizar un pedido al administardor  .</p>
             </div>
           </div>
         </div>
@@ -141,41 +136,6 @@
           @endforeach
         </div>
 
-      </div>
-    </div>
-    <div class="section section-contacts">
-      <div class="row">
-        <div class="col-md-8 ml-auto mr-auto">
-          <h2 class="text-center title">Work with us</h2>
-          <h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
-          <form class="contact-form">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="bmd-label-floating">Your Name</label>
-                  <input type="email" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="bmd-label-floating">Your Email</label>
-                  <input type="email" class="form-control">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="exampleMessage" class="bmd-label-floating">Your Message</label>
-              <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
-            </div>
-            <div class="row">
-              <div class="col-md-4 ml-auto mr-auto text-center">
-                <button class="btn btn-primary btn-raised">
-                  Send Message
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
   </div>

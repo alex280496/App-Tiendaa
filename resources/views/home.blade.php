@@ -3,7 +3,7 @@
 @section('body-class','profile-page sidebar-collapse')
 @section('content')
 
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/profile_city.jpg')}}')">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/welcome.jpg')}}')">
 
 </div>
 <div class="main main-raised">
@@ -17,25 +17,8 @@
           </div>
       @endif
 
-      <ul class="nav nav-pills nav-pills-icons" role="tablist">
-    <!--
-        color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
-    -->
-    <li class="nav-item active">
-        <a class="nav-link active" href="#dashboard-1" role="tab" data-toggle="tab">
-            <i class="material-icons">dashboard</i>
-            CARRITO DE COMPRAS
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="#tasks-1" role="tab" data-toggle="tab">
-            <i class="material-icons">list</i>
-            PEDIDOS REALIZADOS
-        </a>
-    </li>
-</ul>
-
+      <h4 class="text-center">Te presentamos tu carrito de compras actual</h4>
+      <p class="text-center">Puedes agregar mas productos a tu carrito de compras y realizar el pedido al administrador</p>
  <!--
  cart es un campo calculado que estamso definiendo en el modelo usuario
           con este nombre getCartAttribute, entonces me permite obtener el carro y con este
