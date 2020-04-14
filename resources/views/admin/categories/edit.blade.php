@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/profile_city.jpg')}}')">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/welcome.jpg')}}')">
 
 </div>
 <div class="main main-raised">
@@ -50,33 +50,5 @@
 
   </div>
 </div>
-<footer class="footer footer-default">
-  <div class="container">
-    <nav class="float-left">
-      <ul>
-        <li>
-          <a href="https://www.creative-tim.com">
-            Creative Tim
-          </a>
-        </li>
-        <li>
-          <a href="https://creative-tim.com/presentation">
-            About Us
-          </a>
-        </li>
-        <li>
-          <a href="http://blog.creative-tim.com">
-            Blog
-          </a>
-        </li>
-        <li>
-          <a href="https://www.creative-tim.com/license">
-            Licenses
-          </a>
-        </li>
-      </ul>
-    </nav>
 
-  </div>
-</footer>
 @endsection

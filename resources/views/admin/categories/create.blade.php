@@ -3,7 +3,7 @@
 @section('body-class','profile-page sidebar-collapse')
 @section('content')
 
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/profile_city.jpg')}}')">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/welcome.jpg')}}')">
 
 </div>
 <div class="main main-raised">
@@ -40,6 +40,7 @@
 
   </div>
 </div>
+<!-- footer por defecto
 <footer class="footer footer-default">
   <div class="container">
     <nav class="float-left">
@@ -69,4 +70,5 @@
 
   </div>
 </footer>
+-->
 @endsection

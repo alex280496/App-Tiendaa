@@ -50,8 +50,7 @@
 
         <div class="row mb-4">
           <div class="col-md-12">
-          <textarea class="form-control" placeholder="Descripcion larga" rows="5" name="long_description">
-          {{$product->long_description}}</textarea>
+          <textarea class="form-control" placeholder="Descripcion larga" rows="5" name="long_description">{{$product->long_description}}</textarea>
           </div>
         </div>
           <button class="btn btn-primary">Guardar Cambios</button>
@@ -61,33 +60,4 @@
 
   </div>
 </div>
-<footer class="footer footer-default">
-  <div class="container">
-    <nav class="float-left">
-      <ul>
-        <li>
-          <a href="https://www.creative-tim.com">
-            Creative Tim
-          </a>
-        </li>
-        <li>
-          <a href="https://creative-tim.com/presentation">
-            About Us
-          </a>
-        </li>
-        <li>
-          <a href="http://blog.creative-tim.com">
-            Blog
-          </a>
-        </li>
-        <li>
-          <a href="https://www.creative-tim.com/license">
-            Licenses
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-  </div>
-</footer>
 @endsection

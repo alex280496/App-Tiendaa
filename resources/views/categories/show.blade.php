@@ -59,8 +59,10 @@
         </div>
         @endforeach
       </div>
-      <div class="text-center">
-        {{$products->links()}}
+      <div class="row text-center">
+        <div class="col-xl-12">
+            {{$products->links()}}
+        </div>
       </div>
     </div>
 
